@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Cookie Privacy Control</title>
+		<script src="popup.js"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+		<style>
+			body {
+				width: 400px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container p-3">
+			<div class="row mb-3">
+				<div class="col">
+					<button id="apply-cookie-selection" type="button" class="btn btn-primary">Apply Cookie Selection</button>
+				</div>
+				<div class="col">
+					<div class="custom-control custom-switch my-2">
+					  <input type="checkbox" class="custom-control-input" id="should-auto">
+					  <label class="custom-control-label" for="should-auto">Automatically Apply</label>
+					</div>
+				</div>	
+			</div>
+			<div class="row">
+				<div class="col">
+					<h3>Cookie Types</h3>
+					<div class="custom-control custom-switch my-2">
+					  <input type="checkbox" class="custom-control-input" id="cpc-all">
+					  <label class="custom-control-label" for="cpc-all">All</label>
+					</div>
+					<div class="custom-control custom-switch my-2">
+					  <input type="checkbox" class="custom-control-input" id="cpc-advertising">
+					  <label class="custom-control-label" for="cpc-advertising">Advertising</label>
+					</div>
+					<div class="custom-control custom-switch my-2">
+					  <input type="checkbox" class="custom-control-input" id="cpc-analytics">
+					  <label class="custom-control-label" for="cpc-analytics">Analytics</label>
+					</div>
+					<div class="custom-control custom-switch my-2">
+					  <input type="checkbox" class="custom-control-input" id="cpc-functional">
+					  <label class="custom-control-label" for="cpc-functional">Functional</label>
+					</div>
+					<div class="custom-control custom-switch my-2">
+					  <input type="checkbox" class="custom-control-input" id="cpc-location">
+					  <label class="custom-control-label" for="cpc-location">Location</label>
+					</div>
+					<div class="custom-control custom-switch my-2">
+					  <input type="checkbox" class="custom-control-input" id="cpc-device">
+					  <label class="custom-control-label" for="cpc-device">Device Characteristics</label>
+					</div>
+					<div class="custom-control custom-switch my-2">
+					  <input type="checkbox" class="custom-control-input" id="cpc-storage">
+					  <label class="custom-control-label" for="cpc-storage">Local Storage</label>
+					</div>
+					<div class="custom-control custom-switch my-2">
+					  <input type="checkbox" class="custom-control-input" id="cpc-personalised">
+					  <label class="custom-control-label" for="cpc-personalised">Personalization</label>
+					</div>
+					<div class="custom-control custom-switch my-2">
+					  <input type="checkbox" class="custom-control-input" id="cpc-social">
+					  <label class="custom-control-label" for="cpc-social">Social Media</label>
+					</div>
+					<div class="custom-control custom-switch my-2">
+					  <input type="checkbox" class="custom-control-input" id="cpc-research">
+					  <label class="custom-control-label" for="cpc-research">Market Research</label>
+					</div>
+					<div class="custom-control custom-switch my-2">
+					  <input type="checkbox" class="custom-control-input" id="cpc-products">
+					  <label class="custom-control-label" for="cpc-products">Product Data</label>
+					</div>
+					<div class="custom-control custom-switch my-2">
+					  <input type="checkbox" class="custom-control-input" id="cpc-offline">
+					  <label class="custom-control-label" for="cpc-offline">Offline Data Combination</label>
+					</div>
+					<div class="custom-control custom-switch my-2">
+					  <input type="checkbox" class="custom-control-input" id="cpc-security">
+					  <label class="custom-control-label" for="cpc-security">Security, Fraud Prevention & Debugging</label>
+					</div>
+					<div class="custom-control custom-switch my-2">
+					  <input type="checkbox" class="custom-control-input" id="cpc-other">
+					  <label class="custom-control-label" for="cpc-other">Other</label>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-3">
+				<div class="col">
+					<button id="save-cookie-selection" type="button" class="btn btn-primary">Store Cookie Selection</button>
+				</div>
+			</div>
+			<div class="row mt-3">
+				<div class="col">
+					<button id="apply-vendors" type="button" class="btn btn-primary">Apply Vendor Selection</button>
+				</div>
+			</div>
+			<div class="row mt-3">
+				<div class="col">
+					<button id="rescan-vendors" type="button" class="btn btn-primary">Rescan Vendors</button>
+				</div>
+				<div class="col">
+					<button id="store-vendors" type="button" class="btn btn-primary">Store Vendors</button>
+				</div>
+			</div>
+			<div class="row mt-3">
+				<div class="col">
+					<h2>Risk Levels</h2>
+				</div>
+				<div class="col">
+					<button id="scan-fields" type="button" class="btn btn-primary">Scan Risk</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div>Risk Level</div>
+				</div>
+				<div class="col">
+					<div>Field Count</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div>1</div>
+				</div>
+				<div class="col">
+					<div id="risk-1"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div>2</div>
+				</div>
+				<div class="col">
+					<div id="risk-2"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div>3</div>
+				</div>
+				<div class="col">
+					<div id="risk-3"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div>4</div>
+				</div>
+				<div class="col">
+					<div id="risk-4"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div>5</div>
+				</div>
+				<div class="col">
+					<div id="risk-5"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div>6</div>
+				</div>
+				<div class="col">
+					<div id="risk-6"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

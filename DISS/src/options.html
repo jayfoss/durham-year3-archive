@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Privacy Analysis Options</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<h1>Vendors</h1>
+				</div>
+			</div>
+			<div class="row my-3">
+				<div class="col">
+					<button id="save-vendor-selection" type="button" class="btn btn-primary">Store Vendor Selection</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="custom-control custom-switch my-2">
+					  <input type="checkbox" class="custom-control-input" id="select-all-vendors">
+					  <label class="custom-control-label" for="select-all-vendors">Select All Vendors</label>
+					</div>
+					<hr />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div id="vendor-options"></div>
+				</div>
+			</div>
+		</div>
+		<script src="options.js"></script>
+	</body>
+</html>
